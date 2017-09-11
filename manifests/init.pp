@@ -10,14 +10,14 @@
 class pdk(
   String $pdk_version = $pdk::params::pdk_version,
   String $pdk_download_url = $pdk::params::pdk_download_url,
-  String $staging_dir = $pdk::params::staging_dir
+  String $staging_dir = $pdk::params::staging_dir,
   ) inherits pdk::params {
 
   $pdk_complete_download_url = "https://${pdk_download_url}&ver=${pdk_version}"
   $pdk_local_pkg = "pdk-${pdk_version}.${::operatingsystem}${pdk::params::rel}.${pdk::params::pdk_pkg_format}"
 
 if !defined(Class['staging']){
-  class { 'staging':
+  class { '::staging':
     path  => $staging_dir,
     #owner => 'puppet',
     #group => 'puppet',

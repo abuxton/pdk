@@ -32,7 +32,7 @@ $pdk_version = 'latest'
       $provider = 'dpkg'
     }
     default :{
-      fail ("$osfamily is not supported by the $module_name module")
+      fail ("${::osfamily} is not supported by the ${module_name} module")
     }
   }
 
