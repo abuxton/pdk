@@ -86,7 +86,9 @@ Vagrant.configure("2") do |config|
    # puppet module install puppetlabs-puppet_agent into /tmp/modules of the repository before you try use this
    # module install commands here
    sudo /opt/puppetlabs/bin/puppet module install puppetlabs-puppet_agent
-
+   #dependencies for pdk module
+   sudo /opt/puppetlabs/bin/puppet module install puppet-staging
+   sudo /opt/puppetlabs/bin/puppet module install puppetlabs-stdlib
    # arbitery puppet usage in this case to update the agent
    sudo /opt/puppetlabs/bin/puppet apply -e "class{'puppet_agent': package_version=>'1.7.2'}"
    SHELL

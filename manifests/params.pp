@@ -24,9 +24,9 @@ $pdk_version = 'latest'
       $pdk_pkg_format = 'dmg'
       $provider = 'appdmg'
     }
-    'Debian':{
-      $dist = 'debian'
-      $rel = "${::operatingsystemmajrelease}.${::minor}"
+    'Ubuntu':{
+      $dist = 'ubuntu'
+      $rel = $facts[os][release][full]
       $pdk_download_url = "${base_download_url}dist=${dist}&rel=${rel}&arch=${::architecture}"
       $pdk_pkg_format = 'deb'
       $provider = 'dpkg'
