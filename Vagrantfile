@@ -13,6 +13,11 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "puppetlabs/centos-7.0-64-puppet"
+  #config.vm.box = "puppetlabs/debian-8.2-32-puppet"
+  #config.vm.box = "puppetlabs/ubuntu-16.04-64-puppet"
+  #config.vm.box = "wandisco/sles-11.3-64"
+
+
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
@@ -71,7 +76,7 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.synced_folder "./tmp/modules", "/etc/puppetlabs/code/modules"
   config.vm.synced_folder "./tmp/manifests", "/etc/puppetlabs/code/environments/production/manifests"
-  config.vm.synced_folder "../cis_benchmarks", "/etc/puppetlabs/code/modules/cis_benchmarks"
+  config.vm.synced_folder "../pdk", "/etc/puppetlabs/code/modules/pdk"
 
    config.vm.provision "shell", inline: <<-SHELL
    #yum install tree -y #for reasons
