@@ -18,3 +18,17 @@ Puppetfile.lock
 *.iml
 .*.sw?
 .yardoc/
+import/
+.tmp
+*.lock
+*.local
+.rbenv-gemsets
+.ruby-version
+.git*
+.vagrant*
+build/
+docs/
+tests/
+junit/
+tmp/
+Vagrantfile
