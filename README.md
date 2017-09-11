@@ -47,6 +47,11 @@ N/A
 
 The PDK has it's own prerequisites for usage and support of Puppet language.
 
+### TODO
+Provide support for following OS's
+* SLES
+* Windows
+
 ## Development
 
 
