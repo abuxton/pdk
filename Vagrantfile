@@ -12,9 +12,9 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "puppetlabs/centos-7.0-64-puppet"
+  #config.vm.box = "puppetlabs/centos-7.0-64-puppet"
   #config.vm.box = "puppetlabs/debian-8.2-32-puppet"
-  #config.vm.box = "puppetlabs/ubuntu-16.04-64-puppet"
+  config.vm.box = "puppetlabs/ubuntu-16.04-64-puppet"
   #config.vm.box = "wandisco/sles-11.3-64"
 
 
@@ -79,10 +79,10 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "../pdk", "/etc/puppetlabs/code/modules/pdk"
 
    config.vm.provision "shell", inline: <<-SHELL
-   #yum install tree -y #for reasons
+   yum install tree -y #for reasons
    # to update puppet
    # see https://docs.puppet.com/puppet/4.7/release_notes.html#puppet-471 for version
-   #sudo rpm -Uvh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+   sudo rpm -Uvh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
    # puppet module install puppetlabs-puppet_agent into /tmp/modules of the repository before you try use this
    # module install commands here
    sudo /opt/puppetlabs/bin/puppet module install puppetlabs-puppet_agent
