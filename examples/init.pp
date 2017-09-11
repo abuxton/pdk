@@ -1,2 +1,2 @@
 # simple example
-include pdk
+include ::pdk
