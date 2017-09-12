@@ -12,14 +12,14 @@ $pdk_version = 'latest'
   case $::operatingsystem {
     /^(RedHat|CentOS|Scientific|OracleLinux)$/: {
         $dist = 'el'
-        $rel = $::operatingsystemmajrelease
+        $rel = $facts[operatingsystemmajrelease]
         $pdk_download_url = "${base_download_url}dist=${dist}&rel=${rel}&arch=${::architecture}"
         $pdk_pkg_format = 'rpm'
         $provider = 'rpm'
     }
     'Darwin' : {
       $dist ='osx'
-      $rel = $::macosx_productversion_major
+      $rel = $facts[macosx_productversion_major]
       $pdk_download_url = "${base_download_url}dist=${dist}&rel=${rel}&arch=${::architecture}"
       $pdk_pkg_format = 'dmg'
       $provider = 'appdmg'
