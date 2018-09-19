@@ -1,6 +1,6 @@
 {
   "name": "abuxton-pdk",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "author": "abuxton",
   "summary": "Module to install the Puppet Development Kit or PDK, created with the pdk... ironically",
   "license": "Apache-2.0",
