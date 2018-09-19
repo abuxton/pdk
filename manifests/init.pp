@@ -8,7 +8,7 @@
 # @example
 #   include pdk
 class pdk(
-  enum['String','latest','present','absent','purged','installed'] $pdk_version = $pdk::params::pdk_version,
+  Enum['String','latest','present','absent','purged','installed'] $pdk_version = $pdk::params::pdk_version,
   Optional[String] $pdk_download_url = $pdk::params::pdk_download_url,
   Optional[String] $staging_dir = $pdk::params::staging_dir,
   ) inherits pdk::params {
@@ -16,9 +16,9 @@ class pdk(
     case $facts['operatingsystem'] {
       'windows' : {
         package {'pdk':
-        ensure    => $pdk_version,
-        provider  => $pdk::params::provider,
-        source    => $pdk_download_url,
+        ensure   => $pdk_version,
+        provider => $pdk::params::provider,
+        source   => $pdk_download_url,
       }
     }
     default: {
