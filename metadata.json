@@ -13,8 +13,12 @@
       "version_requirement": ">= 4.13.1 < 5.0.0"
     },
     {
+      "name": "chocolatey-chocolatey",
+      "version_requirement": ">= 1.2.6"
+    },
+    {
       "name": "puppet-staging",
-      "version_requirement": ">= 2.2.0"
+      "version_requirement": ">= 3.2.0"
     }
   ],
   "operatingsystem_support": [
@@ -35,6 +39,37 @@
       "operatingsystemrelease": [
         "16.6.0"
       ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Scientific",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "windows",
+      "operatingsystemrelease": [
+        "2008 R2",
+        "2012 R2"
+      ]
     }
   ],
   "requirements": [
@@ -43,7 +78,7 @@
       "version_requirement": ">= 4.7.0 < 6.0.0"
     }
   ],
-  "pdk-version": "1.0.1",
-  "template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-module-template.git",
-  "template-ref": "heads/master-0-g5db7961"
+  "pdk-version": "1.7.0",
+  "template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-templates.git",
+  "template-ref": "1.7.0-0-g57412ed"
 }
