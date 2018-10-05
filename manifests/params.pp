@@ -12,7 +12,7 @@ class pdk::params {
 $staging_dir = '/tmp/staging'
 $base_download_url = 'pm.puppetlabs.com/cgi-bin/pdk_download.cgi?'
 
-$pdk_version = 'installed'
+$pdk_version = 'latest'
   case $facts['operatingsystem'] {
     /^(RedHat|CentOS|Scientific|OracleLinux)$/: {
       $dist = 'el'
@@ -30,8 +30,8 @@ $pdk_version = 'installed'
     }
     'Ubuntu':{
       $dist = 'ubuntu'
-      $rel = $facts[os][release][full]
-      $pdk_download_url = "${base_download_url}dist=${dist}&rel=${rel}&arch=${::architecture}"
+      $rel = $facts['os']['release']['full']
+      $pdk_download_url = "${base_download_url}dist=${dist}&rel=${rel}&arch=${facts['os']['architecture']}"
       $pdk_pkg_format = 'deb'
       $provider = 'dpkg'
     }
