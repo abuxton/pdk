@@ -25,7 +25,7 @@ class pdk(
       $pdk_complete_download_url = "https://${pdk_download_url}&ver=${pdk_version}"
       $pdk_local_pkg = "pdk-${pdk_version}.${::operatingsystem}${pdk::params::rel}.${pdk::params::pdk_pkg_format}"
 
-      archive { $pdk_local_pkg :
+      archive { "${staging_dir}/${pdk_local_pkg}" :
         source => $pdk_complete_download_url,
       }
       
@@ -33,7 +33,7 @@ class pdk(
         ensure    => $pdk_version,
         provider  => $pdk::params::provider,
         source    => "${staging_dir}/${pdk_local_pkg}",
-        subscribe => Archive[$pdk_local_pkg],
+        subscribe => Archive["${staging_dir}/${pdk_local_pkg}"],
       }
     }
   }
