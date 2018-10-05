@@ -28,7 +28,7 @@ class pdk(
       archive { "${staging_dir}/${pdk_local_pkg}" :
         source => $pdk_complete_download_url,
       }
-      
+
       package {'pdk':
         ensure    => $pdk_version,
         provider  => $pdk::params::provider,
