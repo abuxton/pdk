@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## Realease 0.0.3
+**Bugfixes**
+updated to use archive module
+Support for ubuntu
+
 ## Release 0.0.3
 
 **Features**

@@ -50,10 +50,13 @@ The PDK has it's own prerequisites for usage and support of Puppet language.
 ### TODO
 Provide support for following OS's
 * SLES
-* Windows
 
 ## Development
 
 
 
-## Release Notes/Contributors/Etc. **Optional**
+## Release Notes/Contributors/Etc. 
+
+* Helen Griffiths   https://github.com/threepistons
+* Kevin Reeuwijk    https://github.com/kreeuwijk
+* Jaime Mickelson   http://github.com/jmick44
