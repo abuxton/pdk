@@ -17,14 +17,14 @@ $pdk_version = 'latest'
     /^(RedHat|CentOS|Scientific|OracleLinux)$/: {
       $dist = 'el'
       $rel = $facts[operatingsystemmajrelease]
-      $pdk_download_url = "${base_download_url}dist=${dist}&rel=${rel}&arch=${::architecture}"
+      $pdk_download_url = "${base_download_url}dist=${dist}&rel=${rel}&arch=${facts['os']['architecture']}"
       $pdk_pkg_format = 'rpm'
       $provider = 'rpm'
     }
     'Darwin' : {
       $dist ='osx'
       $rel = $facts[macosx_productversion_major]
-      $pdk_download_url = "${base_download_url}dist=${dist}&rel=${rel}&arch=${::architecture}"
+      $pdk_download_url = "${base_download_url}dist=${dist}&rel=${rel}&arch=${facts['os']['architecture']}"
       $pdk_pkg_format = 'dmg'
       $provider = 'appdmg'
     }
