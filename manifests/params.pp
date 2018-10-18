@@ -21,6 +21,13 @@ $pdk_version = 'latest'
       $pdk_pkg_format = 'rpm'
       $provider = 'rpm'
     }
+    'SLES' : {
+      $dist = 'sles'
+      $rel = $facts[operatingsystemmajrelease]
+      $pdk_download_url = "${base_download_url}dist=${dist}&rel=${rel}&arch=${facts['os']['architecture']}"
+      $pdk_pkg_format = 'rpm'
+      $provider = 'rpm'
+    }
     'Darwin' : {
       $dist ='osx'
       $rel = $facts[macosx_productversion_major]
