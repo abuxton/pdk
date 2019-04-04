@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "peterjausovec.vscode-docker",
+        "davidanson.vscode-markdownlint",
+        "ms-vscode.powershell",
+        "jpogran.puppet-vscode"
+    ]
+}
