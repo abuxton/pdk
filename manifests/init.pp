@@ -8,9 +8,12 @@
 # @example
 #   include pdk
 class pdk(
-  Enum['String','latest','present','absent','purged','installed'] $pdk_version = $pdk::params::pdk_version,
-  Optional[String] $pdk_download_url = $pdk::params::pdk_download_url,
-  Optional[String] $staging_dir = $pdk::params::staging_dir,
+  Optional[
+    String, 
+    Enum['latest','present','absent','purged','installed']
+    ]               $pdk_version      = $pdk::params::pdk_version,
+  Optional[String]  $pdk_download_url = $pdk::params::pdk_download_url,
+  Optional[String]  $staging_dir      = $pdk::params::staging_dir,
   ) inherits pdk::params {
 
     case $facts['operatingsystem'] {
