@@ -9,7 +9,7 @@
 #   include pdk
 class pdk(
   Optional[
-    String, 
+    String,
     Enum['latest','present','absent','purged','installed']
     ]               $pdk_version      = $pdk::params::pdk_version,
   Optional[String]  $pdk_download_url = $pdk::params::pdk_download_url,
