@@ -8,7 +8,7 @@
 # @example
 #   include pdk
 class pdk(
-  Optional[
+  Variant[
     String,
     Enum['latest','present','absent','purged','installed']
     ]               $pdk_version      = $pdk::params::pdk_version,
