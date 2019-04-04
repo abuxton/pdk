@@ -1,6 +1,6 @@
 {
   "name": "abuxton-pdk",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "abuxton",
   "summary": "Module to install the Puppet Development Kit or PDK, created with the pdk... ironically",
   "license": "Apache-2.0",
@@ -26,6 +26,13 @@
       "operatingsystem": "RedHat",
       "operatingsystemrelease": [
         "7.0"
+      ]
+    },
+    {
+      "operatingsystem": "SUSE",
+      "operatingsystemrelease": [
+        "11",
+        "12"
       ]
     },
     {
@@ -75,7 +82,7 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 4.7.0 < 6.0.0"
+      "version_requirement": ">= 4.7.0 < 7.0.0"
     }
   ],
   "pdk-version": "1.7.0",
