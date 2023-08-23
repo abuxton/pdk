@@ -13,7 +13,7 @@ $staging_dir = '/tmp/staging'
 $base_download_url = 'pm.puppetlabs.com/cgi-bin/pdk_download.cgi?'
 
 $pdk_version = 'latest'
-  case $facts['operatingsystem'] {
+  case $facts['os']['name'] {
     /^(RedHat|CentOS|Scientific|OracleLinux)$/: {
       $dist = 'el'
       $rel = $facts[operatingsystemmajrelease]
@@ -44,7 +44,7 @@ $pdk_version = 'latest'
       $provider = 'chocolatey'
     }
     default :{
-      fail ("${::osfamily} is not supported by the ${module_name} module")
+      fail ("${facts['os']['name']} is not supported by the ${module_name} module")
     }
   }
 

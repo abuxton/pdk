@@ -7,18 +7,17 @@
 #
 # @example
 #   include pdk
-class pdk(
+class pdk (
   Variant[
     String,
     Enum['latest','present','absent','purged','installed']
-    ]               $pdk_version      = $pdk::params::pdk_version,
+  ]               $pdk_version      = $pdk::params::pdk_version,
   Optional[String]  $pdk_download_url = $pdk::params::pdk_download_url,
   Optional[String]  $staging_dir      = $pdk::params::staging_dir,
-  ) inherits pdk::params {
-
-    case $facts['operatingsystem'] {
-      'windows' : {
-        package {'pdk':
+) inherits pdk::params {
+  case $facts['os']['name'] {
+    'windows' : {
+      package { 'pdk':
         ensure   => $pdk_version,
         provider => $pdk::params::provider,
         source   => $pdk_download_url,
@@ -26,13 +25,13 @@ class pdk(
     }
     default: {
       $pdk_complete_download_url = "https://${pdk_download_url}&ver=${pdk_version}"
-      $pdk_local_pkg = "pdk-${pdk_version}.${::operatingsystem}${pdk::params::rel}.${pdk::params::pdk_pkg_format}"
+      $pdk_local_pkg = "pdk-${pdk_version}.${facts['os']['name']}${pdk::params::rel}.${pdk::params::pdk_pkg_format}"
 
       archive { "${staging_dir}/${pdk_local_pkg}" :
         source => $pdk_complete_download_url,
       }
 
-      package {'pdk':
+      package { 'pdk':
         ensure    => $pdk_version,
         provider  => $pdk::params::provider,
         source    => "${staging_dir}/${pdk_local_pkg}",
